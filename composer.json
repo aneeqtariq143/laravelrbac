@@ -1,0 +1,16 @@
+{
+    "name": "aneeq/laravelrbac",
+    "description": "Role Based Access Control For Laravel Projects",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Aneeq Tariq",
+            "email": "aneeqtariq_143@yahoo.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "yajra/laravel-datatables-oracle": "^6.0"
+    }
+}

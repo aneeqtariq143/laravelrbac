@@ -1,0 +1,258 @@
+<?php
+
+use Illuminate\Database\Seeder;
+
+class PermissionsTableSeeder extends Seeder
+{
+
+    /**
+     * Auto generated seed file
+     *
+     * @return void
+     */
+    public function run()
+    {
+        
+
+        \DB::table('permissions')->delete();
+        
+        \DB::table('permissions')->insert(array (
+            0 => 
+            array (
+                'id' => 1,
+                'parent_id' => NULL,
+                'name' => 'user-management',
+                'display_name' => 'User Management',
+                'description' => 'User Management',
+                'type' => 'expand',
+                'url' => NULL,
+                'parameters' => NULL,
+                'url_query_string' => NULL,
+                'css_class' => NULL,
+                'main_menu' => 1,
+                'sort_no' => 1,
+                'created_at' => '2017-04-04 09:07:43',
+                'updated_at' => '2017-04-04 09:07:43',
+                'deleted_at' => NULL,
+            ),
+            1 => 
+            array (
+                'id' => 2,
+                'parent_id' => 1,
+                'name' => 'manage-roles',
+                'display_name' => 'Manage Roles',
+                'description' => 'Manage Roles',
+                'type' => 'expand',
+                'url' => NULL,
+                'parameters' => NULL,
+                'url_query_string' => NULL,
+                'css_class' => NULL,
+                'main_menu' => 1,
+                'sort_no' => 1,
+                'created_at' => '2017-04-04 09:08:41',
+                'updated_at' => '2017-04-04 09:08:41',
+                'deleted_at' => NULL,
+            ),
+            2 => 
+            array (
+                'id' => 3,
+                'parent_id' => 2,
+                'name' => 'view-roles',
+                'display_name' => 'View Roles',
+                'description' => 'View Roles',
+                'type' => 'open',
+                'url' => 'view-roles',
+                'parameters' => NULL,
+                'url_query_string' => NULL,
+                'css_class' => NULL,
+                'main_menu' => 1,
+                'sort_no' => 1,
+                'created_at' => '2017-04-04 09:10:27',
+                'updated_at' => '2017-04-04 09:10:27',
+                'deleted_at' => NULL,
+            ),
+            3 => 
+            array (
+                'id' => 4,
+                'parent_id' => 3,
+                'name' => 'add-role',
+                'display_name' => 'Add Role',
+                'description' => 'Add Role',
+                'type' => 'button',
+                'url' => NULL,
+                'parameters' => NULL,
+                'url_query_string' => NULL,
+                'css_class' => NULL,
+                'main_menu' => 0,
+                'sort_no' => NULL,
+                'created_at' => '2017-04-04 09:53:56',
+                'updated_at' => '2017-04-06 04:22:12',
+                'deleted_at' => NULL,
+            ),
+            4 => 
+            array (
+                'id' => 5,
+                'parent_id' => 3,
+                'name' => 'update-role',
+                'display_name' => 'Update Role',
+                'description' => 'Update Role',
+                'type' => 'button',
+                'url' => NULL,
+                'parameters' => NULL,
+                'url_query_string' => NULL,
+                'css_class' => NULL,
+                'main_menu' => 0,
+                'sort_no' => NULL,
+                'created_at' => '2017-04-04 09:54:36',
+                'updated_at' => '2017-04-06 04:22:53',
+                'deleted_at' => NULL,
+            ),
+            5 => 
+            array (
+                'id' => 6,
+                'parent_id' => 3,
+                'name' => 'delete-role',
+                'display_name' => 'Delete Role',
+                'description' => 'Delete Role',
+                'type' => 'button',
+                'url' => NULL,
+                'parameters' => NULL,
+                'url_query_string' => NULL,
+                'css_class' => NULL,
+                'main_menu' => 0,
+                'sort_no' => NULL,
+                'created_at' => '2017-04-04 09:55:33',
+                'updated_at' => '2017-04-06 04:23:18',
+                'deleted_at' => NULL,
+            ),
+            6 => 
+            array (
+                'id' => 7,
+                'parent_id' => 2,
+                'name' => 'assign-roles',
+                'display_name' => 'Assign Roles',
+                'description' => 'Assign Roles',
+                'type' => 'open',
+                'url' => NULL,
+                'parameters' => NULL,
+                'url_query_string' => NULL,
+                'css_class' => NULL,
+                'main_menu' => 0,
+                'sort_no' => 2,
+                'created_at' => '2017-04-04 09:56:20',
+                'updated_at' => '2017-04-04 09:59:54',
+                'deleted_at' => NULL,
+            ),
+            7 => 
+            array (
+                'id' => 8,
+                'parent_id' => 1,
+                'name' => 'manage-permissions',
+                'display_name' => 'Manage Permissions',
+                'description' => 'Manage Permissions',
+                'type' => 'expand',
+                'url' => NULL,
+                'parameters' => NULL,
+                'url_query_string' => NULL,
+                'css_class' => NULL,
+                'main_menu' => 1,
+                'sort_no' => 2,
+                'created_at' => '2017-04-04 09:57:35',
+                'updated_at' => '2017-04-04 09:59:46',
+                'deleted_at' => NULL,
+            ),
+            8 => 
+            array (
+                'id' => 9,
+                'parent_id' => 8,
+                'name' => 'view-permissions',
+                'display_name' => 'View Permissions',
+                'description' => 'View Permissions',
+                'type' => 'open',
+                'url' => NULL,
+                'parameters' => NULL,
+                'url_query_string' => NULL,
+                'css_class' => NULL,
+                'main_menu' => 1,
+                'sort_no' => 1,
+                'created_at' => '2017-04-04 10:01:25',
+                'updated_at' => '2017-04-04 10:01:25',
+                'deleted_at' => NULL,
+            ),
+            9 => 
+            array (
+                'id' => 10,
+                'parent_id' => 9,
+                'name' => 'add-permission',
+                'display_name' => 'Add Permission',
+                'description' => 'Add Permission',
+                'type' => 'button',
+                'url' => NULL,
+                'parameters' => NULL,
+                'url_query_string' => NULL,
+                'css_class' => NULL,
+                'main_menu' => 0,
+                'sort_no' => NULL,
+                'created_at' => '2017-04-04 10:02:33',
+                'updated_at' => '2017-04-06 04:41:33',
+                'deleted_at' => NULL,
+            ),
+            10 => 
+            array (
+                'id' => 11,
+                'parent_id' => 9,
+                'name' => 'update-permission',
+                'display_name' => 'Update Permission',
+                'description' => 'Update Permission',
+                'type' => 'open',
+                'url' => NULL,
+                'parameters' => NULL,
+                'url_query_string' => NULL,
+                'css_class' => NULL,
+                'main_menu' => 0,
+                'sort_no' => NULL,
+                'created_at' => '2017-04-04 10:10:46',
+                'updated_at' => '2017-04-06 04:41:49',
+                'deleted_at' => NULL,
+            ),
+            11 => 
+            array (
+                'id' => 12,
+                'parent_id' => 9,
+                'name' => 'delete-permission',
+                'display_name' => 'Delete Permission',
+                'description' => 'Delete Permission',
+                'type' => 'button',
+                'url' => NULL,
+                'parameters' => NULL,
+                'url_query_string' => NULL,
+                'css_class' => NULL,
+                'main_menu' => 0,
+                'sort_no' => NULL,
+                'created_at' => '2017-04-04 10:12:41',
+                'updated_at' => '2017-04-06 04:42:13',
+                'deleted_at' => NULL,
+            ),
+            12 => 
+            array (
+                'id' => 13,
+                'parent_id' => 8,
+                'name' => 'assign-permission',
+                'display_name' => 'Assign Permission',
+                'description' => 'Assign Permission',
+                'type' => 'open',
+                'url' => 'assign-role-permissions',
+                'parameters' => NULL,
+                'url_query_string' => NULL,
+                'css_class' => NULL,
+                'main_menu' => 1,
+                'sort_no' => 2,
+                'created_at' => '2017-04-04 10:14:54',
+                'updated_at' => '2017-04-04 10:14:54',
+                'deleted_at' => NULL,
+            ),
+        ));
+        
+        
+    }
+}
