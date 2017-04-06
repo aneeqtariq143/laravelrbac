@@ -19,9 +19,9 @@
 
 1 Install RBAC Package by adding the following lines into ***composer.json*** file
 
-    <pre>"require": {
+    "require": {
         "aneeq/laravelrbac": "dev-master"
-    }</pre>
+    }
 
 or
 
@@ -41,3 +41,30 @@ or
     'permission' => \Aneeq\LaravelRbac\Middleware\RbacPermission::class
 
 5 Publish Package Files. 
+
+	php artisan vendor:publish --provider="Aneeq\LaravelRbac\Providers\RbacServiceProvider"
+
+
+ The above command will copy ***Config, Migrations, Seeds and views*** file.
+
+ Note: If you want to Publish Specific files then, use the above command with `--tag="config"`
+
+6 Migrate and Seed published tables.
+
+	php artisan migrate
+	php artisan db:seed --class=RolesTableSeeder
+	php artisan db:seed --class=PermissionsTableSeeder
+	php artisan db:seed --class=RolesPermissionsTableSeeder
+	php artisan db:seed --class=UsersRolesTableSeeder
+
+7 Implement ***RbacUserInterface*** and ***RbacUserTrait*** on Laravel ***User*** Model
+
+	use Aneeq\LaravelRbac\Interfaces\RbacUserInterface;
+	use Aneeq\LaravelRbac\Traits\RbacUserTrait;
+
+	class User extends Authenticatable implements RbacUserInterface
+	{
+    	use RbacUserTrait;
+
+
+Installation Completed
