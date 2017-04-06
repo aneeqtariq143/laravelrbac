@@ -26,6 +26,10 @@ class RbacServiceProvider extends ServiceProvider
         $this->publishes([
             __DIR__.'/../Seeds/' => database_path('seeds')
         ], 'seeds');
+        
+        $this->publishes([
+            __DIR__.'/../views/' => resource_path('views/vendor/laravelrbac')
+        ], 'views');
     }
 
     /**
