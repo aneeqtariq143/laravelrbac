@@ -9,7 +9,10 @@ use Aneeq\LaravelRbac\Datatables\RoleDatatable;
 use Aneeq\LaravelRbac\Datatables\PermissionsDatatables;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Support\Collection;
-use Illuminate\Support\Facades\Redirect;
+use Aneeq\LaravelRbac\Events\PreRolesAssignEvent;
+use Aneeq\LaravelRbac\Events\PostRolesAssignEvent;
+use Aneeq\LaravelRbac\Events\PrePermissionAssignEvent;
+use Aneeq\LaravelRbac\Events\PostPermissionAssignEvent;
 
 class RbacController extends Controller {
 
@@ -353,8 +356,11 @@ class RbacController extends Controller {
         $response = [];
         try {
             $role_model_object = $role_model::findOrFail($data['role_id']);
+            event(new PrePermissionAssignEvent($role_model_object->permissions));
             if ($role_model_object->permissions()->sync($data['permission_ids'])) {
                 $role_model_object->flushCachedPermissions();
+                $role_model_object = $role_model_object->fresh(['permissions']);
+                event(new PostPermissionAssignEvent($role_model_object->permissions));
                 $response['success'] = 'Permission are Successfully Assigned';
             } else {
                 $response['error'] = "Somthing's went wrong. Contact Support Center.";
@@ -422,8 +428,11 @@ class RbacController extends Controller {
         $response = [];
         try {
             $user_model_object = $user_model::findOrFail($data['user_id']);
+            event(new PreRolesAssignEvent($user_model_object->roles));
             if ($user_model_object->roles()->sync($data['role_ids'])) {
                 $user_model_object->flushCachedRoles();
+                $user_model_object = $user_model_object->fresh(['roles']);
+                event(new PostRolesAssignEvent($user_model_object->roles));
                 $response['success'] = 'Roles are Successfully Assigned';
             } else {
                 $response['error'] = "Somthing's went wrong. Contact Support Center.";
